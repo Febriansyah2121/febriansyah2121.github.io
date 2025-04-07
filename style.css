@@ -1,0 +1,91 @@
+.jumbotron {
+    padding-top: 6rem;
+    background-color: whitesmoke ;
+}
+#projects {
+    background-color: #f3f4f5;
+}
+footer {
+    background-color: #008000;
+}
+
+section{
+    padding-top: 5rem;
+}
+/*style untuk membuat gambar bisa di klik */
+.overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.0);
+    z-index: 999999;
+    transition: 1s;
+    text-align: center;
+    padding: 100px 0;
+}
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba (0,0,0,0.5);
+}
+
+.overlay:target img {
+    animation: zoomDanFade 1s;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 70px;
+    right: 40%;
+    margin-right: -20px;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    border: 1px solid white;
+    line-height: 12px;
+    padding: 5px;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: slideDownFade .5s .5s forwards;
+}
+
+/* animasi */
+@keyframes zoomDanFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+/* untuk menghilangkan titik jika ada debug titik di web */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
